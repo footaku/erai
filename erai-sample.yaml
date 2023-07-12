@@ -1,0 +1,7 @@
+nullability:
+  enable: true
+  returnValue:
+    availableAnnotations:
+      - "jakarta.annotation.Nonnull"
+    excludeClasses:
+      - "io.github.footaku.erai.NotInspectionClass"

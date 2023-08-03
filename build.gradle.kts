@@ -76,6 +76,31 @@ publishing {
             artifactId = "erai"
             version = "0.0.1"
 
+            pom {
+                name.set("erai")
+                description.set("Extra Rules of Architecture Inspection")
+                url.set("https://github.com/footaku/erai")
+
+                licenses {
+                    license {
+                        name.set("The Apache License, Version 2.0")
+                        url.set("https://www.apache.org/licenses/LICENSE-2.0.txt")
+                    }
+                }
+                developers {
+                    developer {
+                        id.set("footaku")
+                        name.set("footaku")
+                        email.set("jptkyfjmt@gmail.com")
+                    }
+                }
+                scm {
+                    connection.set("scm:git:git://github.com/footaku/erai")
+                    developerConnection.set("scm:git:git://github.com/footaku/erai")
+                    url.set("https://github.com/footaku/erai/tree/main")
+                }
+            }
+
             from(components["java"])
         }
     }

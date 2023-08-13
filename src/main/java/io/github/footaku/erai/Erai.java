@@ -31,7 +31,6 @@ public class Erai {
                 // TODO Logger
                 setting = new Setting(
                     new Nullability(
-                        true,
                         new Nullability.ReturnValue(List.of(), List.of())
                     )
                 );

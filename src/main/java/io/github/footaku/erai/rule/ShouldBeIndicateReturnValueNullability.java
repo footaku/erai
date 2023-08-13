@@ -19,16 +19,11 @@ import java.util.List;
  */
 public class ShouldBeIndicateReturnValueNullability implements ArchRuleTest {
 
-    private final boolean enable = Erai.getSetting().nullability().enable();
     private final List<String> availableAnnotations = Erai.getSetting().nullability().availableAnnotations();
     private final List<String> excludedClasses = Erai.getSetting().nullability().excludedClasses();
 
     @Override
     public void execute(String packagePath, ScopePathProvider scopePathProvider, Collection<String> excludedPaths) {
-        if (!enable) {
-            return;
-        }
-
         var rule = ArchRuleDefinition.methods()
             .that(isNotExcludedClass)
             .and(hasReturnValue)

@@ -37,8 +37,7 @@ The configuration values are as follows.
 ```yaml
 # Presence of Nullability annotation
 nullability:
-  enable: true                            # If you set false, this rule will be disabled.
-  returnValue:                            
+  returnValue:
     availableAnnotations:                 # FQCN of annotations that can be applied to return values.
       - "jakarta.annotation.Nonnull"
       - "javax.annotation.Nonnull"

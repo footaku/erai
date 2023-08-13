@@ -6,7 +6,7 @@ import java.util.Objects;
 /**
  * Nullability settings.
  */
-public record Nullability(boolean enable, ReturnValue returnValue) {
+public record Nullability(ReturnValue returnValue) {
     private static final List<String> DEFAULT_AVAILABLE_ANNOTATIONS = List.of(
         "lombok.NonNull",
         "jakarta.annotation.Nonnull",
@@ -23,7 +23,7 @@ public record Nullability(boolean enable, ReturnValue returnValue) {
      * @return enable
      */
     public List<String> availableAnnotations() {
-        if (Objects.isNull(returnValue.availableAnnotations) || returnValue.availableAnnotations.size() < 1) {
+        if (Objects.isNull(returnValue.availableAnnotations) || returnValue.availableAnnotations.isEmpty()) {
             return DEFAULT_AVAILABLE_ANNOTATIONS;
         }
         return returnValue.availableAnnotations;
@@ -35,7 +35,7 @@ public record Nullability(boolean enable, ReturnValue returnValue) {
      * @return enable
      */
     public List<String> excludedClasses() {
-        if (Objects.isNull(returnValue.excludedClasses) || returnValue.excludedClasses.size() < 1) {
+        if (Objects.isNull(returnValue.excludedClasses) || returnValue.excludedClasses.isEmpty()) {
             return List.of();
         }
         return returnValue.excludedClasses;

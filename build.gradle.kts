@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "io.github.footaku"
-version = "0.0.1"
+version = "0.0.2"
 
 repositories {
     mavenLocal()
@@ -38,7 +38,6 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.1")
     testImplementation("org.assertj:assertj-core:3.24.2")
     testCompileOnly("org.projectlombok:lombok:1.18.28")
-
 }
 
 tasks.named<Test>("test") {
@@ -74,7 +73,7 @@ publishing {
         create<MavenPublication>("mavenJava") {
             groupId = "io.github.footaku"
             artifactId = "erai"
-            version = "0.0.1"
+            version = "0.0.2"
 
             pom {
                 name.set("erai")

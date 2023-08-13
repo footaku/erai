@@ -19,7 +19,7 @@ plugins {
 
 dependencies {
     ...
-    archUnitExtraLib('io.github.footaku:erai:0.0.1')
+    archUnitExtraLib('io.github.footaku:erai:0.0.2')
     ...
 }
 
@@ -37,11 +37,15 @@ The configuration values are as follows.
 ```yaml
 # Presence of Nullability annotation
 nullability:
-  enable: true                            # If you set false, this rule will be disabled.
-  returnValue:                            
+  returnValue:
     availableAnnotations:                 # FQCN of annotations that can be applied to return values.
       - "jakarta.annotation.Nonnull"
       - "javax.annotation.Nonnull"
     excludeClasses:                       # FQCN of classes that excluding from this rule.
       - "io.github.footaku.erai.NotInspectionClass"
+```
+
+## Run inspections
+```shell
+gradle checkRules
 ```

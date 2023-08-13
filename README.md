@@ -44,3 +44,8 @@ nullability:
     excludeClasses:                       # FQCN of classes that excluding from this rule.
       - "io.github.footaku.erai.NotInspectionClass"
 ```
+
+## Run inspections
+```shell
+gradle checkRules
+```

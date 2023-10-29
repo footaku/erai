@@ -1,7 +1,7 @@
 package io.github.footaku.erai;
 
-import io.github.footaku.erai.rule.ShouldBeIndicateReturnValueNullability;
 import com.societegenerale.commons.plugin.utils.ArchUtils;
+import io.github.footaku.erai.rule.ShouldBeIndicateReturnValueNullability;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,7 +28,6 @@ class ShouldBeIndicateReturnValueNullabilityTest {
         });
 
         Assertions.assertThat(th).isInstanceOf(AssertionError.class).hasMessageContaining("was violated (2 times)");
-
     }
 
     @Test

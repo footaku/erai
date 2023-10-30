@@ -19,7 +19,7 @@ plugins {
 
 dependencies {
     ...
-    archUnitExtraLib('io.github.footaku:erai:0.0.3')
+    archUnitExtraLib('io.github.footaku:erai:0.0.4')
     ...
 }
 

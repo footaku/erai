@@ -28,6 +28,7 @@ public class ShouldBeIndicateReturnValueNullability implements ArchRuleTest {
             .that(isNotExcludedClass)
             .and(hasReturnValue)
             .and(isReturnBoxingType)
+            .and(isNotEnumBasicMethod)
             .and(isNotGeneratedCode)
             .and(isNotOverrideBasicMethod)
             .should(beAnnotatedWith)
@@ -60,6 +61,20 @@ public class ShouldBeIndicateReturnValueNullability implements ArchRuleTest {
             public boolean test(JavaMethod input) {
                 var returnTYpe = input.getReturnType().toErasure();
                 return !returnTYpe.isPrimitive();
+            }
+        };
+
+    DescribedPredicate<JavaMethod> isNotEnumBasicMethod =
+        new DescribedPredicate<>("is not Enum basic methods") {
+            private final static List<String> BASIC_METHODS = List.of("$values", "values", "valueOf");
+
+            @Override
+            public boolean test(JavaMethod input) {
+                if (!BASIC_METHODS.contains(input.getName())) {
+                    return true;
+                }
+
+                return !input.getOwner().isEnum();
             }
         };
 

@@ -27,6 +27,7 @@ public class ShouldBeIndicateReturnValueNullability implements ArchRuleTest {
         var rule = ArchRuleDefinition.methods()
             .that(isNotExcludedClass)
             .and(hasReturnValue)
+            .and(isReturnBoxingType)
             .and(isNotGeneratedCode)
             .and(isNotOverrideBasicMethod)
             .should(beAnnotatedWith)
@@ -50,6 +51,15 @@ public class ShouldBeIndicateReturnValueNullability implements ArchRuleTest {
             public boolean test(JavaMethod input) {
                 var returnTYpe = input.getReturnType().toErasure();
                 return !returnTYpe.getName().equals("void");
+            }
+        };
+
+    DescribedPredicate<JavaMethod> isReturnBoxingType =
+        new DescribedPredicate<>("is return boxing type") {
+            @Override
+            public boolean test(JavaMethod input) {
+                var returnTYpe = input.getReturnType().toErasure();
+                return !returnTYpe.isPrimitive();
             }
         };
 

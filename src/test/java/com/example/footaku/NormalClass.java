@@ -51,4 +51,8 @@ public class NormalClass {
     public String annotatedWithSpringNullable() {
         return "Hello, world";
     }
+
+    public int primitiveTypeNeedNotAnnotations() {
+        return -1;
+    }
 }

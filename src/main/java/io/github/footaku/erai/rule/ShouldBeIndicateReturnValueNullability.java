@@ -1,5 +1,6 @@
 package io.github.footaku.erai.rule;
 
+import com.tngtech.archunit.core.domain.JavaModifier;
 import io.github.footaku.erai.Erai;
 import com.societegenerale.commons.plugin.rules.ArchRuleTest;
 import com.societegenerale.commons.plugin.service.ScopePathProvider;
@@ -136,6 +137,11 @@ public class ShouldBeIndicateReturnValueNullability implements ArchRuleTest {
     ArchCondition<JavaMethod> beAnnotatedWith = new ArchCondition<>("be annotated with non-null or nullable") {
         @Override
         public void check(JavaMethod input, ConditionEvents events) {
+            var modifiers = input.getModifiers();
+            if (modifiers.contains(JavaModifier.PRIVATE)) {
+                return;
+            }
+
             var annotations = input.getAnnotations()
                 .stream()
                 .map(a -> a.getRawType().getName())

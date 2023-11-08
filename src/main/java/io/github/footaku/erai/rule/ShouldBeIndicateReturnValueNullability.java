@@ -101,6 +101,10 @@ public class ShouldBeIndicateReturnValueNullability implements ArchRuleTest {
                     return true;
                 }
 
+                if (classAnnotations.contains("org.seasar.doma.DaoImplementation")) {
+                    return true;
+                }
+
                 return classAnnotations.contains("org.seasar.doma.EntityTypeImplementation")
                     && clazz.getSimpleName().startsWith("_");
             }

@@ -34,11 +34,11 @@ public record Nullability(ReturnValue returnValue) {
      *
      * @return enable
      */
-    public List<String> excludedClasses() {
-        if (Objects.isNull(returnValue.excludedClasses) || returnValue.excludedClasses.isEmpty()) {
+    public List<String> excludeClasses() {
+        if (Objects.isNull(returnValue.excludeClasses) || returnValue.excludeClasses.isEmpty()) {
             return List.of();
         }
-        return returnValue.excludedClasses;
+        return returnValue.excludeClasses;
     }
 
     /**
@@ -46,7 +46,7 @@ public record Nullability(ReturnValue returnValue) {
      */
     public record ReturnValue(
         List<String> availableAnnotations,
-        List<String> excludedClasses
+        List<String> excludeClasses
     ) {
     }
 }

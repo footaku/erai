@@ -21,7 +21,7 @@ import java.util.List;
 public class ShouldBeIndicateReturnValueNullability implements ArchRuleTest {
 
     private final List<String> availableAnnotations = Erai.getSetting().nullability().availableAnnotations();
-    private final List<String> excludedClasses = Erai.getSetting().nullability().excludedClasses();
+    private final List<String> excludeClasses = Erai.getSetting().nullability().excludeClasses();
 
     @Override
     public void execute(String packagePath, ScopePathProvider scopePathProvider, Collection<String> excludedPaths) {
@@ -43,7 +43,7 @@ public class ShouldBeIndicateReturnValueNullability implements ArchRuleTest {
         new DescribedPredicate<>("is not excluded classes") {
             @Override
             public boolean test(JavaMethod javaMethod) {
-                return !excludedClasses.contains(javaMethod.getOwner().getName());
+                return !excludeClasses.contains(javaMethod.getOwner().getName());
             }
         };
 

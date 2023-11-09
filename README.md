@@ -32,7 +32,7 @@ archUnit {
 
 ## Settings
 In The default settings, executes all rules.  
-If you only want to apply certain rules, create 'erai.yaml' in the classpath root.  
+If you only want to apply certain rules, create 'erai.yaml' in the project root.  
 The configuration values are as follows.
 ```yaml
 # Presence of Nullability annotation

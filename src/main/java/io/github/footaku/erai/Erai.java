@@ -5,6 +5,7 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import io.github.footaku.erai.configuration.Nullability;
 import io.github.footaku.erai.configuration.Setting;
 
+import java.nio.file.Path;
 import java.util.List;
 
 /**
@@ -25,8 +26,9 @@ public class Erai {
         if (setting == null) {
             var mapper = new ObjectMapper(new YAMLFactory());
             try {
-                // TODO fallback erai.yml
-                setting = mapper.readValue(ClassLoader.getSystemResource("erai.yaml"), Setting.class);
+                // TODO fallback another yaml file name
+                var path = Path.of("erai.yaml");
+                setting = mapper.readValue(path.toFile(), Setting.class);
             } catch (Exception e) {
                 // TODO Logger
                 setting = new Setting(

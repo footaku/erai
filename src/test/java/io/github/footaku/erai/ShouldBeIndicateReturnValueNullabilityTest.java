@@ -22,7 +22,7 @@ class ShouldBeIndicateReturnValueNullabilityTest {
 
         var th = Assertions.catchThrowable(() -> {
             var sut = new ShouldBeIndicateReturnValueNullability();
-            addExcludedClasses(sut);
+            addexcludeClasses(sut);
 
             sut.execute(testTargetPath, new TestScopeProvider(), Collections.emptySet());
         });
@@ -36,7 +36,7 @@ class ShouldBeIndicateReturnValueNullabilityTest {
 
         var th = Assertions.catchThrowable(() -> {
             var sut = new ShouldBeIndicateReturnValueNullability();
-            addExcludedClasses(sut);
+            addexcludeClasses(sut);
             addAvailableAnnotations(sut);
 
             sut.execute(testTargetPath, new TestScopeProvider(), Collections.emptySet());
@@ -45,9 +45,9 @@ class ShouldBeIndicateReturnValueNullabilityTest {
         Assertions.assertThat(th).isInstanceOf(AssertionError.class).hasMessageContaining("was violated (10 times)");
     }
 
-    private void addExcludedClasses(Object sut) {
+    private void addexcludeClasses(Object sut) {
         try {
-            var field = ShouldBeIndicateReturnValueNullability.class.getDeclaredField("excludedClasses");
+            var field = ShouldBeIndicateReturnValueNullability.class.getDeclaredField("excludeClasses");
             field.setAccessible(true);
             field.set(sut, List.of("com.example.footaku.NotInspectionClass"));
         } catch (Exception e) {

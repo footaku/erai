@@ -30,7 +30,7 @@ sourceSets {
 }
 
 dependencies {
-    implementation("com.societegenerale.commons:arch-unit-build-plugin-core:3.0.0")
+    implementation("com.societegenerale.commons:arch-unit-build-plugin-core:3.1.0")
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.15.2")
 
     testImplementation("jakarta.annotation:jakarta.annotation-api:2.1.1")

@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "io.github.footaku"
-version = "0.0.6"
+version = "0.0.7"
 
 repositories {
     mavenLocal()
@@ -73,7 +73,7 @@ publishing {
         create<MavenPublication>("mavenJava") {
             groupId = "io.github.footaku"
             artifactId = "erai"
-            version = "0.0.6"
+            version = "0.0.7"
 
             pom {
                 name.set("erai")

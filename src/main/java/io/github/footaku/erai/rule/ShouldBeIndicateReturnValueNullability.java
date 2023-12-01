@@ -23,6 +23,11 @@ public class ShouldBeIndicateReturnValueNullability implements ArchRuleTest {
     private final List<String> availableAnnotations = Erai.getSetting().nullability().availableAnnotations();
     private final List<String> excludeClasses = Erai.getSetting().nullability().excludeClasses();
 
+    /**
+     * Default Constructor
+     */
+    public ShouldBeIndicateReturnValueNullability() {}
+
     @Override
     public void execute(String packagePath, ScopePathProvider scopePathProvider, Collection<String> excludedPaths) {
         var rule = ArchRuleDefinition.methods()

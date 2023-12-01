@@ -5,6 +5,8 @@ import java.util.Objects;
 
 /**
  * Nullability settings.
+ *
+ * @param returnValue return value settings
  */
 public record Nullability(ReturnValue returnValue) {
     private static final List<String> DEFAULT_AVAILABLE_ANNOTATIONS = List.of(
@@ -43,6 +45,11 @@ public record Nullability(ReturnValue returnValue) {
 
     /**
      * Return value settings.
+     *
+     * @param availableAnnotations available annotations for return values
+     *                             (default: {@link #DEFAULT_AVAILABLE_ANNOTATIONS})
+     * @param excludeClasses       excluded classes from inspection
+     *                             (default: empty)
      */
     public record ReturnValue(
         List<String> availableAnnotations,

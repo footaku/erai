@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "io.github.footaku"
-version = "0.0.7"
+version = "0.1.0"
 
 repositories {
     mavenLocal()
@@ -12,8 +12,8 @@ repositories {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
 sourceSets {
@@ -30,8 +30,8 @@ sourceSets {
 }
 
 dependencies {
-    implementation("com.societegenerale.commons:arch-unit-build-plugin-core:3.1.0")
-    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.15.2")
+    implementation("com.societegenerale.commons:arch-unit-build-plugin-core:4.0.0")
+    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.16.0")
 
     testImplementation("jakarta.annotation:jakarta.annotation-api:2.1.1")
     testImplementation("org.springframework:spring-core:6.0.9")
@@ -73,7 +73,7 @@ publishing {
         create<MavenPublication>("mavenJava") {
             groupId = "io.github.footaku"
             artifactId = "erai"
-            version = "0.0.7"
+            version = "0.1.0"
 
             pom {
                 name.set("erai")

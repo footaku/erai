@@ -1,5 +1,7 @@
 # erai(Extra Rules of Architecture Inspection)
 erai is extra rules for Java inspecting architecture constraint, using ArchUnit.
+- 0.0.x: Compatible with JDK 17
+- 0.1.x: Compatible with JDK 21
 
 ## Implemented
 - Inspect return values have nullability annotation
@@ -13,12 +15,18 @@ build.gradle
 ```groovy
 plugins {
     ...
+    // For JDK 17
+    id "com.societegenerale.commons.arch-unit-gradle-plugin" version "3.1.0"
+    // For JDK 21
     id "com.societegenerale.commons.arch-unit-gradle-plugin" version "4.0.0"
     ...
 }
 
 dependencies {
     ...
+    // For JDK 17
+    archUnitExtraLib('io.github.footaku:erai:0.0.7')
+    // For JDK 21
     archUnitExtraLib('io.github.footaku:erai:0.1.0')
     ...
 }

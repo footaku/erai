@@ -13,7 +13,7 @@ build.gradle
 ```groovy
 plugins {
     ...
-    id "com.societegenerale.commons.arch-unit-gradle-plugin" version "3.0.0"
+    id "com.societegenerale.commons.arch-unit-gradle-plugin" version "4.0.0"
     ...
 }
 

@@ -37,7 +37,7 @@ dependencies {
     testImplementation("org.springframework:spring-core:6.0.9")
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.1")
     testImplementation("org.assertj:assertj-core:3.24.2")
-    testCompileOnly("org.projectlombok:lombok:1.18.28")
+    testCompileOnly("org.projectlombok:lombok:1.18.30")
 }
 
 tasks.named<Test>("test") {

@@ -35,7 +35,7 @@ dependencies {
 
     testImplementation("jakarta.annotation:jakarta.annotation-api:2.1.1")
     testImplementation("org.springframework:spring-core:6.0.9")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.9.1")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.1")
     testImplementation("org.assertj:assertj-core:3.24.2")
     testCompileOnly("org.projectlombok:lombok:1.18.28")
 }
